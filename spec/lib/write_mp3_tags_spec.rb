@@ -1,9 +1,9 @@
 require 'id3_tags'
-require_relative '../helpers/duplicate_file_helper'
+require_relative '../helpers/id3_tags_helper'
 
 describe 'Id3Tags.write_tags_to' do
-  context 'given a track with all the ID3 metadata and a Hash of empty ID3' do
-    let(:original_track) {File.join File.dirname(__FILE__), '../assets/all_id3.mp3'}
+  context 'given an MP3 with all the ID3 metadata and a Hash of empty ID3' do
+    let(:original_track) { asset_file('all_id3.mp3') }
     let(:new_metadata) { {} }
 
     it 'resets all the editable ID3 tags of the track to nil' do
@@ -28,9 +28,9 @@ describe 'Id3Tags.write_tags_to' do
     end
   end
 
-  context 'given a track with no metadata and a Hash full of ID3' do
-    let(:original_track) {File.join File.dirname(__FILE__), '../assets/no_id3.mp3'}
-    let(:new_cover_art) {File.join File.dirname(__FILE__), '../assets/black_pixel.png'}
+  context 'given an MP3 with no metadata and a Hash full of ID3' do
+    let(:original_track) { asset_file('no_id3.mp3') }
+    let(:new_cover_art) { asset_file('black_pixel.png') }
     let(:new_cover_art_data) {File.open(new_cover_art, 'rb') {|io| io.read}}
     let(:new_metadata) { {title: "A track", album: "An album", artist:
       "An artist", year: 2012, comment: "A comment", genre: "A genre", bpm: 68,

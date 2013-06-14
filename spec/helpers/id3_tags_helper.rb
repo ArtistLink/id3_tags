@@ -9,3 +9,7 @@ def with_duplicate_file_of(original)
     FileUtils.rm duplicate
   end
 end
+
+def asset_file(filename)
+  File.join File.dirname(__FILE__), '..', 'assets', filename
+end

@@ -1,8 +1,9 @@
 require 'id3_tags'
+require_relative '../helpers/id3_tags_helper'
 
 describe 'Id3Tags.read_tags_from' do
-  context 'given a track with all the ID3 metadata' do
-    let(:track_with_metadata) {File.join File.dirname(__FILE__), '../assets/all_id3.mp3'}
+  context 'given an MP3 with all the ID3 metadata' do
+    let(:track_with_metadata) { asset_file('all_id3.mp3') }
 
     it 'returns all the ID3 tag with the right value' do
       id3_tags = Id3Tags.read_tags_from track_with_metadata
@@ -35,8 +36,8 @@ describe 'Id3Tags.read_tags_from' do
     end
   end
 
-  context 'given a track with no ID3 metadata' do
-    let(:track_with_metadata) {File.join File.dirname(__FILE__), '../assets/no_id3.mp3'}
+  context 'given an MP3 with no ID3 metadata' do
+    let(:track_with_metadata) { asset_file('no_id3.mp3') }
 
     it 'returns all the ID3 tag with a nil value' do
       id3_tags = Id3Tags.read_tags_from track_with_metadata
