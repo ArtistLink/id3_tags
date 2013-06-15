@@ -14,4 +14,17 @@ describe Id3Tags do
       end
     end
   end
+
+  context 'given an M4A' do
+    let(:original) { asset_file('all_id3.m4a') }
+
+    it 'does not alter tracks after reading AND writing the metadata' do
+      original_id3_tags = Id3Tags.read_tags_from(original)
+      with_duplicate_file_of(original) do |duplicate|
+        Id3Tags.write_tags_to(duplicate, original_id3_tags)
+        Id3Tags.read_tags_from(duplicate).should == original_id3_tags
+        FileUtils.identical?(original, duplicate).should be_true
+      end
+    end
+  end
 end

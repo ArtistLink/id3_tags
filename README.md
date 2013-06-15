@@ -1,7 +1,7 @@
 What is ID3 Tags
 ================
 
-A ruby gem to read and write ID3 metadata from/to MP3 files}
+A ruby gem to read and write ID3 metadata from/to MP3/M4Amp3 files}
 
 Why ID3 Tags was born
 =======================
