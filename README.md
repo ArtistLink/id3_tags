@@ -16,8 +16,14 @@ How to install
 Run `gem install id3_tags`.
 Alternatively, you can include `id3_tags` in the Gemfile of your bundled project.
 
-How to use
-==========
+How to use from the command line (executable)
+=============================================
+
+Type `id3_tags` followed by the path of a local file.
+This is will show the ID3 metadata of that file.
+
+How to use from other programs
+==============================
 
 * To read metadata from a file, run `Id3Tags.read_from_file(file_path)`
 * To write metadata to a file, run `Id3Tags.write_to_file(file_path, metadata)`
