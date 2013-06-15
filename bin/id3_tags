@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+begin
+  require 'id3_tags'
+rescue LoadError
+  require 'rubygems'
+  require 'id3_tags'
+end
+
+puts "ID3 from #{ARGV[0]}:"
+puts Id3Tags.read_tags_from ARGV[0]
