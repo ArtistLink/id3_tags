@@ -7,6 +7,6 @@ task default: :spec
 require 'yard'
 
 YARD::Rake::YardocTask.new do |t|
-  t.files   = ['lib/**/*.rb']   
-  t.options = ['--no-private']
+  t.files   = ['lib/**/*.rb']
+  # t.options = ['--no-private']
 end
