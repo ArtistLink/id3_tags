@@ -1,10 +1,13 @@
 What is ID3 Tags
 ================
 
-A ruby gem to read and write ID3 metadata from/to MP3/M4Amp3 files}
+
+A ruby gem to read and write ID3 metadata from/to MP3/M4A files
+
+[![Build Status](https://travis-ci.org/topspin/id3_tags.png)](https://travis-ci.org/topspin/id3_tags)
 
 Why ID3 Tags was born
-=======================
+=====================
 
 At [Topspin](http://topspinmedia.com) we provide [ArtistLink](http://artistlink.com), a platform for musician to upload and share their songs.
 Artistlink provides a form to read and edit the songs' metadata and stores this information in the ID3 tags of a song.
@@ -34,5 +37,7 @@ How to contribute
 =================
 
 Make sure tests pass, then either submit a Pull Request.
+Please consider testing against the [versions of Ruby supported](http://github.com/topspin/id3_tags/tree/master/.travis.yml) by ID3 Tags.
+
 A list of [nice TODOs](http://github.com/topspin/id3_tags/tree/master/TODO.md) is provided.
 You can also build a new version of the gem and move it to your gem repository.
