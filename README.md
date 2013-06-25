@@ -16,30 +16,7 @@ Requirements
 ============
 
 ID3 Tags depends on the [TagLib library](http://taglib.github.io).
-If you don't have TagLib installed, ID3 Tags will ask to install it.
-
-Installing TagLib on OS X
--------------------------
-
-The easiest way is using [homebrew](http://mxcl.github.io/homebrew). Just type:
-
-    brew install taglib
-
-Installing TagLib on Ubuntu
----------------------------
-
-The easiest way is using [apt-get](http://linux.die.net/man/8/apt-get).
-
-**Unfortunately, the official Ubuntu repositories point to an old version of TagLib**.
-
-Therefore, an extra step is required. The full command is:
-
-    sudo add-apt-repository ppa:kubuntu-ppa/backports
-    sudo apt-get update
-    sudo apt-get install libtag1-dev
-
-If you don't update the repository, you will possibly get TagLib 1.7.1 installed,
-which [does not fully support MP4 and M4A files](http://git.io/aureUA).
+If you don't have TagLib >= 1.7.2 installed, ID3 Tags will ask to install it.
 
 How to use from the command line
 ================================

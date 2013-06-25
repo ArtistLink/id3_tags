@@ -17,9 +17,14 @@ Gem::Specification.new do |spec|
 
   spec.files         = Dir['{bin,lib}/**/*'] + ['MIT-LICENSE', 'README.md']
 
+  spec.requirements  = ['taglib >= 1.7.2 (libtag1-dev in Debian/Ubuntu, taglib-devel in Fedora/RHEL)']
+  spec.extensions    = ['ext/extconf.rb']
+
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
+
+  spec.required_ruby_version = '>= 1.9.0'
 
   spec.add_dependency 'taglib-ruby'
   spec.add_dependency 'activesupport'
