@@ -1,10 +1,10 @@
 language: ruby
+before_install:
+  - sudo add-apt-repository -y ppa:kubuntu-ppa/backports
+  - sudo apt-get update
+  - sudo apt-get -y install libtag1-dev
 rvm:
   - 2.0.0
   - 1.9.3
   - 1.9.2
-  - jruby-19mode
   - rbx-19mode
-  - ruby-head
-  - jruby-head
-  - ree
