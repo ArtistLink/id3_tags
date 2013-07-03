@@ -4,6 +4,7 @@ What is ID3 Tags
 A ruby gem to read and write ID3 metadata from/to MP3/M4A files
 
 [![Build Status](https://travis-ci.org/topspin/id3_tags.png)](https://travis-ci.org/topspin/id3_tags)
+[![Code Climate](https://codeclimate.com/github/topspin/id3_tags.png)](https://codeclimate.com/github/topspin/id3_tags)
 
 Why ID3 Tags was born
 =====================
