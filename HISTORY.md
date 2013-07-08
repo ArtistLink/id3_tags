@@ -1,3 +1,5 @@
+v0.0.6  - 2013/07/08 Fix bug when writing ID3 with nil track/disk number
+
 v0.0.5  - 2013/07/03 Reorganize code to decrease complexity in CodeClimate
 
 v0.0.4  - 2013/06/25 Support Ruby 1.9.2 by including the correct ActiveSupport

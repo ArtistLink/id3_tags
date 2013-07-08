@@ -22,10 +22,10 @@ module Id3Tags
       when :boolean
         TagLib::MP4::Item.from_bool content
       when :pair
-        return unless content.has_key? :number
+        return unless content[:number]
         TagLib::MP4::Item.from_int_pair content.values_at(:number, :count)
       when :image
-        return unless content.has_key? :data
+        return unless content[:data]
         mime_type = case content[:mime_type]
           when 'image/jpeg' then TagLib::MP4::CoverArt::JPEG
           when 'image/png' then TagLib::MP4::CoverArt::PNG
