@@ -23,7 +23,8 @@ module Id3Tags
         TagLib::MP4::Item.from_bool content
       when :pair
         return unless content[:number]
-        TagLib::MP4::Item.from_int_pair content.values_at(:number, :count)
+        pair = content.values_at :number, :count
+        TagLib::MP4::Item.from_int_pair int_pair_for(pair)
       when :image
         return unless content[:data]
         mime_type = case content[:mime_type]
@@ -34,6 +35,22 @@ module Id3Tags
         cover_art = TagLib::MP4::CoverArt.new mime_type, content[:data]
         TagLib::MP4::Item.from_cover_art_list [cover_art]
       end
+    end
+
+    # Return a *valid* int pair to build a TagLib::MP4::Item object
+    #
+    # @param [Array] pair an array of two elements
+    # @return [Array] a valid pair to use in TagLib::MP4::Item.from_int_pair
+    #
+    # @example int_pair_for([1, 2)] #=> [1, 2]
+    # @example int_pair_for([0, nil)] #=> [0, 0]
+    #
+    # @note This function helps writing tags with pairs that only have one
+    #       value set. A common case is tracks with a *track number* and
+    #       without a *track count*. This information is stored in M4A files
+    #       by setting the *track count* to 0 (and not to 'nil').
+    def int_pair_for(pair)
+      pair.map{|n| n || 0}
     end
   end
 end
