@@ -1,3 +1,5 @@
+v0.0.7  - 2013/07/09 Fix bug when writing GIF cover art to M4A file
+
 v0.0.6  - 2013/07/08 Fix bug when writing ID3 with nil track/disk number
 
 v0.0.5  - 2013/07/03 Reorganize code to decrease complexity in CodeClimate

@@ -29,6 +29,7 @@ module Id3Tags
         mime_type = case content[:mime_type]
           when 'image/jpeg' then TagLib::MP4::CoverArt::JPEG
           when 'image/png' then TagLib::MP4::CoverArt::PNG
+          else return # other formats unsupported by taglib-ruby
         end
         cover_art = TagLib::MP4::CoverArt.new mime_type, content[:data]
         TagLib::MP4::Item.from_cover_art_list [cover_art]
