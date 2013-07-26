@@ -1,3 +1,5 @@
+v0.1.0  - 2013/07/26 Add Rails 4 compatibility
+
 v0.0.8  - 2013/07/09 Fix bug when writing 'nil' track count to M4A file
 
 v0.0.7  - 2013/07/09 Fix bug when writing GIF cover art to M4A file

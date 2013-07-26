@@ -7,3 +7,14 @@ rvm:
   - 2.0.0
   - 1.9.3
   - 1.9.2
+gemfile:
+  - gemfiles/Gemfile.activesupport-3.x
+  - gemfiles/Gemfile.activesupport-4.x
+matrix:
+  exclude:
+    - rvm: 1.9.2
+      gemfile: gemfiles/Gemfile.activesupport-4.x
+    - rvm: 1.9.3
+      gemfile: gemfiles/Gemfile.activesupport-3.x
+    - rvm: 2.0.0
+      gemfile: gemfiles/Gemfile.activesupport-3.x
