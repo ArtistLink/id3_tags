@@ -1,3 +1,8 @@
+# Calculate code coverage
+require 'coveralls'
+Coveralls.wear!
+
+# Provide helper functions
 require 'tmpdir'
 
 def with_duplicate_file_of(original)
@@ -11,7 +16,7 @@ def with_duplicate_file_of(original)
 end
 
 def asset_file(filename)
-  File.join File.dirname(__FILE__), '..', 'assets', filename
+  File.join File.dirname(__FILE__), 'assets', filename
 end
 
 def read_and_write_tags_for(original)

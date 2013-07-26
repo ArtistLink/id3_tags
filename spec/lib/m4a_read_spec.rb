@@ -1,5 +1,5 @@
+require 'spec_helper'
 require 'id3_tags'
-require_relative '../helpers/id3_tags_helper'
 
 describe 'Id3Tags.read_tags_from' do
   context 'given an M4A with all the ID3 metadata' do
