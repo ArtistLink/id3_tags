@@ -33,8 +33,29 @@ How to use from other programs
 ==============================
 
 * Include `id3_tags` in the Gemfile of your bundled project and `bundle install`
-* To read metadata from a file, run `Id3Tags.read_from_file(file_path)`
-* To write metadata to a file, run `Id3Tags.write_to_file(file_path, metadata)`
+* To read metadata from a file, run `Id3Tags.read_tags_from(file_path)`
+* To write metadata to a file, run `Id3Tags.write_tags_to(file_path, metadata)`
+
+Here is a small example:
+
+```
+#!/usr/bin/env ruby
+require 'id3_tags'
+
+file_path = "/tmp/song.mp3"
+image_path = "/tmp/cover.jpg"
+
+tags = Id3Tags.read_tags_from(file_path)
+tags[:artist] = "ACDC"
+tags[:title] = "Hells Bells"
+tags[:track][:number] = 1
+tags[:track][:count] = 10
+tags[:album] = "Back in Black"
+tags[:cover_art][:mime_type] = "image/jpeg"
+tags[:cover_art][:data] = File.read(image_path)
+
+Id3Tags.write_tags_to(file_path, tags)
+```
 
 For more details about the format of the metadata, check the [specs](http://github.com/topspin/id3_tags/tree/master/spec/lib) or the [documentation at RubyDoc.info](http://rubydoc.info/github/topspin/id3_tags/frames).
 
