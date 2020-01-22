@@ -10,7 +10,8 @@ end
 taglib_bin = find_executable 'taglib-config'
 taglib_version = `#{taglib_bin} --version`.chomp if taglib_bin
 
-if taglib_bin.nil? || taglib_version < '1.7.2'
+if taglib_bin.nil? ||
+   Gem::Version.new(taglib_version) < Gem::Version.new('1.7.2')
   error <<-DESC
 
 \e[31mYou must have TagLib >= 1.7.2 installed in order to use taglib-ruby.\e[0m
